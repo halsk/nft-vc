@@ -1,7 +1,7 @@
 {
   "@context": "https://w3id.org/openbadges/v2",
-  "id": "https://nft-vc.halsk.xyz/blockcerts_revocation_list.json",
+  "id": "https://halsk.github.io/nft-vc/blockcerts_revocation_list.json",
   "type": "RevocationList",
-  "issuer": "https://nft-vc.halsk.xyz/blockcerts.json",
+  "issuer": "https://halsk.github.io/nft-vc/blockcerts.json",
   "revokedAssertions": []
 }
