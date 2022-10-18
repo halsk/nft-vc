@@ -33,9 +33,9 @@ const OUPUT_SIGNED_VC_DIR = path.join(
   __dirname,
   "../output/blockchain_certificates"
 )
-const issuerDID = isProduction()
-  ? ISSUER_DID_PRD
-  : ISSUER_DID_DEV
+const issuerDID = isProduction() ?
+  ISSUER_DID_PRD :
+  ISSUER_DID_DEV
 const UUID_PREFIX = "arn:uuid:"
 
 const TEMPLATE_VC = {

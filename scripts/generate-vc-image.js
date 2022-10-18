@@ -23,7 +23,7 @@ const getTemplateFileName = (credentialId) => {
   switch (credentialId) {
     // credentialIdによって、テンプレート変更する場合に条件追加
     default:
-      return "vc-test.svg"
+      return "vc-da.svg"
   }
 }
 
@@ -40,8 +40,14 @@ const getHolderNameFontSize = (holderName) => {
   const MAX_FONT_SIZE = 1
 
   // 直線を引く座標 2点
-  const coordinate1 = { fontSize: 1, length: 9 } // デザイン納品時のfontSizeのまま入る最大文字列長
-  const coordinate2 = { fontSize: 0.45, length: 29 } // 最大文字列長データに合わせて決めたfontSize
+  const coordinate1 = {
+    fontSize: 1,
+    length: 9
+  } // デザイン納品時のfontSizeのまま入る最大文字列長
+  const coordinate2 = {
+    fontSize: 0.45,
+    length: 29
+  } // 最大文字列長データに合わせて決めたfontSize
 
   // 傾き (a)
   const slope =
@@ -67,7 +73,7 @@ const generate = async (member, notoFontData) => {
 
   // replace each placeholder with member's info
   const svg = template
-    .replaceAll("{{CREDENTIAL_NAME}}", member.credential_name)
+    .replaceAll("{{AWARD_TITLE}}", member.credential_name)
     .replaceAll("{{HOLDER_NAME}}", member.holder_name)
     .replaceAll(
       "{{HOLDER_NAME_FONT_SIZE}}",
