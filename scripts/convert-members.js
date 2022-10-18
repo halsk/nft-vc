@@ -16,10 +16,12 @@ const fieldNameMap = {
   LECTURE_NAME: "credential_name",
   STUDENT_ID: "holder_id",
   STUDENT_NAME: "holder_name",
+  CERTIFICATE_IMG: "certificate_img",
   WALLET_ADDRESS: "holder_wallet_address",
 }
 
 const ETHEREUM_WALLET_ADDRESS_RE = /^0x[a-fA-F0-9]{40}$/
+
 function isEthereumAddress(address) {
   return !!address.match(ETHEREUM_WALLET_ADDRESS_RE)
 }
@@ -34,7 +36,9 @@ async function main() {
 
   const items = []
   rawItems.forEach((rawItem) => {
-    const item = { id: uuidv4() }
+    const item = {
+      id: uuidv4()
+    }
     Object.keys(fieldNameMap).forEach((rawField) => {
       const field = fieldNameMap[rawField]
       let value = rawItem[rawField]
